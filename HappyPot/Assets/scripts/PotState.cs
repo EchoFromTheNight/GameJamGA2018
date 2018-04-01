@@ -24,7 +24,7 @@ public class PotState : MonoBehaviour {
 		private Rigidbody2D m_physic;
 		private int m_direction;//left -1, right 1, else 0
 		//private Gravity m_gravity;
-		private Transform m_transform;
+		private Transform transform;
 		private Rigidbody2D physic;
 	// Use this for initialization
 	void Start () {
