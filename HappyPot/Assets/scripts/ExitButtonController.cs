@@ -13,4 +13,9 @@ public class ExitButtonController : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnMouseDown()
+    {
+        Application.Quit();
+    }
 }

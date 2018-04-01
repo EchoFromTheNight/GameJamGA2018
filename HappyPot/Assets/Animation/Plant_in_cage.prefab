@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212144613339003632}
   - component: {fileID: 95241724221516896}
   m_Layer: 0
-  m_Name: Debut
+  m_Name: Plant_in_cage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,8 +35,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209120542570768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.67, y: 14.68, z: -10.277682}
-  m_LocalScale: {x: 2.0629563, y: 2.0629563, z: 2.0629563}
+  m_LocalPosition: {x: -2.52, y: 4.1, z: 0}
+  m_LocalScale: {x: 0.59623945, y: 0.59623945, z: 0.59623945}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
