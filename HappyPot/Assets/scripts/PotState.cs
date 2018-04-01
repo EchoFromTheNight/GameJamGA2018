@@ -38,10 +38,32 @@ public class PotState : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		setMove();
 		setAnimations();
 		setSound();
-		setMove();
+		Debug.log("test");
+	}
+	//external functions to set the state
+	public void seeFire(Vector2 position, float repulsionCoef ){//ok
+		//fear + force in oposite direction
+		humorState = HumorState.fear;
+		float tmpX = transform.position.x - position.x;
+		m_physic.AddForce(Vector2.right * repulsionCoef / tmpX);
+	}
+	public void unseeFire(){//ok
+		humorState = HumorState.happy;
+		//happy + state + stop
+	}
+	public void seeLight(Vector2 position, float attractionCoef ){//ok
+		//happy + force in same direction
+		float tmpX = transform.position.x - position.x;
+		m_physic.AddForce(Vector2.left * repulsionCoef / tmpX);
+	}
+	private void setAnimations(){
+		//ToDo
+	}
 
+	private void setMove(){
 		//handle Move animation
 		/*if(physic.velocity.distance == 0 ){
 			moveState = MoveState.iddle;
@@ -50,25 +72,6 @@ public class PotState : MonoBehaviour {
 		}else{
 			moveState = MoveState.walk;
 		}*/
-
-	}
-	//external functions to set the state
-	public void seeFire(Vector2 position){
-		//fear + force in oposite direction
-		humorState = HumorState.fear;
-		//Vector2 tmp = transform.position -position;
-	}
-	public void unseeFire(){
-		//happy + state + stop
-	}
-	public void seeLight(Vector2 position){
-		//happy + force in same direction
-	}
-	private void setAnimations(){
-
-	}
-	private void setMove(){
-
 	}
 	private void setSound(){
 
