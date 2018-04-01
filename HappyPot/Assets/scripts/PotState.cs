@@ -41,7 +41,7 @@ public class PotState : MonoBehaviour {
 		setMove();
 		setAnimations();
 		setSound();
-		Debug.log("test");
+		Debug.Log("test");
 	}
 	//external functions to set the state
 	public void seeFire(Vector2 position, float repulsionCoef ){//ok
@@ -57,7 +57,7 @@ public class PotState : MonoBehaviour {
 	public void seeLight(Vector2 position, float attractionCoef ){//ok
 		//happy + force in same direction
 		float tmpX = transform.position.x - position.x;
-		m_physic.AddForce(Vector2.left * repulsionCoef / tmpX);
+		m_physic.AddForce(Vector2.left * attractionCoef / tmpX);
 	}
 	private void setAnimations(){
 		//ToDo
@@ -76,4 +76,15 @@ public class PotState : MonoBehaviour {
 	private void setSound(){
 
 	}
+
+
+	void OnTriggerStay(Collider other)
+	{
+		Debug.Log("inside");
+		//other.PotState.seeLight();
+	}
+
+
+
+
 }
