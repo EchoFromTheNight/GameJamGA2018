@@ -15,12 +15,16 @@ public class PotState : MonoBehaviour {
 	private GrowUpState growUpState;
 	private int direction;//left -1, right 1, else 0
 
-	//public
-	public float runSpeed = 0;
-	//private Rigidbody2D m_physic;
-	private Transform transform;
-	private Rigidbody2D physic;
-
+	//growUpState
+		//small
+		//smallToBig
+		//big
+		//bigToSmall
+		
+		private Rigidbody2D m_physic;
+		private int m_direction;//left -1, right 1, else 0
+		//private Gravity m_gravity;
+		private Transform m_transform;
 	// Use this for initialization
 	void Start () {
 		moveState = MoveState.iddle;
