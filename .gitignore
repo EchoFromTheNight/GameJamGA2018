@@ -33,3 +33,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+HappyPot/\.vs/HappyPot/v15/Server/sqlite3/storage\.ide
+
+HappyPot/\.vs/HappyPot/v15/Server/sqlite3/storage\.ide-shm
+
+HappyPot/\.vs/HappyPot/v15/Server/sqlite3/storage\.ide-wal

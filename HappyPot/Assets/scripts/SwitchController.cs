@@ -7,12 +7,24 @@ public class SwitchController : MonoBehaviour {
     //State of the switch
     public bool isOn;
 
-    //Light object that will be affected by the switch
+    //External object that will be affected by the switch
     public GameObject externalObject;
 
-	// Use this for initialization
-	void Start () {
-	}
+    //SpriteOn
+    public Sprite spriteOn;
+
+    //SpriteOff
+    public Sprite spriteOff;
+
+    //Sprite Renderer
+    private SpriteRenderer spriteRenderer;
+
+    // Use this for initialization
+    void Start ()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        updateSprite();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,5 +35,18 @@ public class SwitchController : MonoBehaviour {
         isOn = !isOn;
         ExternalAction script = externalObject.GetComponent<ExternalAction>();
         script.ExecuteAction(isOn);
+        updateSprite();
     }   
+
+    private void updateSprite()
+    {
+        if (isOn)
+        {
+            spriteRenderer.sprite = spriteOn;
+        }
+        else
+        {
+            spriteRenderer.sprite = spriteOff;
+        }
+    }
 }
