@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c31e7a9e606e54a8285bc42082eeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 7e9d38ad041bc514b943dd14d349976f, type: 3}
+  audioClip: {fileID: 8300000, guid: 557dc8fe1fe78f442b3f02ddf505ca49, type: 3}
   audioSource: {fileID: 679121113}
   plant: {fileID: 2090850070}
   text: {fileID: 878453826}
