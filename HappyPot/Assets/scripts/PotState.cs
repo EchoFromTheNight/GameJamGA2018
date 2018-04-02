@@ -62,7 +62,7 @@ public class PotState : MonoBehaviour {
 		float tmpX = transform.position.x - position.x;
 
 
-		Debug.Log("seeLight : " + tmpX);
+		Debug.Log("seeLight : "/* + tmpX*/);
 		if(physic.velocity.x<maxSpeed)
 			physic.AddForce(Vector2.left * attractionCoef * Mathf.Sign(tmpX));
 	}

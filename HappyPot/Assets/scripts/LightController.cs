@@ -21,11 +21,11 @@ public class LightController : ExternalAction{
 
     public override void ExecuteAction(bool isOn)
     {
-        gameObject.SetActive(false);
+      gameObject.SetActive(false);
+      gameObject.GetComponent<LightCollision>().off();
         if (isOn)
         {
-            gameObject.SetActive(false);
-						gameObject.GetComponent<LightCollision>().off();
+
             count++;
         }
         if (count == 1) {
