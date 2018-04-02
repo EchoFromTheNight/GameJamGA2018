@@ -189,7 +189,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -213,7 +213,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!4 &679121114
 Transform:
   m_ObjectHideFlags: 0
@@ -300,6 +300,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1105199009
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.0386493
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.5964615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 21.448345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545281143969594, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f807a70c177ba3a48a787731a74808a5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1209086827
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +395,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 103.59614
+  orthographic size: 155.28781
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
