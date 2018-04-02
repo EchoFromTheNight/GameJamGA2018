@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95409093800322138}
   - component: {fileID: 114232200834010784}
   m_Layer: 0
-  m_Name: Lampe
+  m_Name: lampe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,6 +70,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e61ac2ab26c020419c080185ef7d909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightOn: {fileID: 0}
+  lightOff: {fileID: 0}
+  audioClip: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!212 &212666450129861468
 SpriteRenderer:
   m_ObjectHideFlags: 1

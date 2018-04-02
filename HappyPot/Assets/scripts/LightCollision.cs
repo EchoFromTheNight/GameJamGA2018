@@ -7,8 +7,10 @@ public class LightCollision : MonoBehaviour {
 	public float attractionCoef = 1.0f;
 	//private Gravity m_gravity;
 	private Transform transform;
+	private bool on;
 // Use this for initialization
 	void Start () {
+		on = true;
 		transform = gameObject.GetComponent<Transform>();
  }
 
@@ -24,13 +26,18 @@ public class LightCollision : MonoBehaviour {
 	}*/
 	void OnTriggerStay2D(Collider2D other)
 	{
-		Debug.Log("inside");
-		PotState tmp = other.GetComponentInParent<PotState>();
-		tmp.seeLight(transform.position,attractionCoef);
+		if(on){
+			Debug.Log("inside");
+			PotState tmp = other.GetComponentInParent<PotState>();
+			tmp.seeLight(transform.position,attractionCoef);
+		}
 	}
 	/*void OnTriggerExit2D(Collider2D other)
 	{
 		Debug.Log("exit");
 		//other.PotState.seeLight();
 	}*/
+	public void off(){
+		on = false;
+	}
 }

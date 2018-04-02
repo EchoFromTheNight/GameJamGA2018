@@ -14,7 +14,8 @@ public class PotState : MonoBehaviour {
 	private HumorState humorState;
 	private GrowUpState growUpState;
 	private int direction;//left -1, right 1, else 0
-
+	public float maxSpeed = 10.0f;
+	public float jump = 1.0f;
 	//growUpState
 		//small
 		//smallToBig
@@ -42,12 +43,14 @@ public class PotState : MonoBehaviour {
 		setAnimations();
 		setSound();
 		Debug.Log("test");
+		physic.AddForce(Vector2.up * jump);
 	}
 	//external functions to set the state
 	public void seeFire(Vector2 position, float repulsionCoef ){//ok
 		//fear + force in oposite direction
 		humorState = HumorState.fear;
 		float tmpX = transform.position.x - position.x;
+		if(Mathf.Abs(physic.velocity.x) < maxSpeed)
 		physic.AddForce(Vector2.right * repulsionCoef / tmpX);
 	}
 	public void unseeFire(){//ok
@@ -57,8 +60,11 @@ public class PotState : MonoBehaviour {
 	public void seeLight(Vector2 position, float attractionCoef ){//ok
 		//happy + force in same direction
 		float tmpX = transform.position.x - position.x;
+
+
 		Debug.Log("seeLight : " + tmpX);
-		physic.AddForce(Vector2.left * attractionCoef * tmpX);
+		if(physic.velocity.x<maxSpeed)
+			physic.AddForce(Vector2.left * attractionCoef * Mathf.Sign(tmpX));
 	}
 	private void setAnimations(){
 		//ToDo

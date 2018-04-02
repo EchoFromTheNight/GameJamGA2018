@@ -6,12 +6,12 @@ public class LightController : ExternalAction{
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     public override void ExecuteAction(bool isOn)
@@ -19,6 +19,7 @@ public class LightController : ExternalAction{
         if (isOn)
         {
             gameObject.SetActive(false);
+						gameObject.GetComponent<LightCollision>().off();
         }
     }
 }
