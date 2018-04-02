@@ -48,7 +48,7 @@ public class PotState : MonoBehaviour {
 		//fear + force in oposite direction
 		humorState = HumorState.fear;
 		float tmpX = transform.position.x - position.x;
-		m_physic.AddForce(Vector2.right * repulsionCoef / tmpX);
+		physic.AddForce(Vector2.right * repulsionCoef / tmpX);
 	}
 	public void unseeFire(){//ok
 		humorState = HumorState.happy;
@@ -57,7 +57,8 @@ public class PotState : MonoBehaviour {
 	public void seeLight(Vector2 position, float attractionCoef ){//ok
 		//happy + force in same direction
 		float tmpX = transform.position.x - position.x;
-		m_physic.AddForce(Vector2.left * attractionCoef / tmpX);
+		Debug.Log("seeLight : " + tmpX);
+		physic.AddForce(Vector2.left * attractionCoef * tmpX);
 	}
 	private void setAnimations(){
 		//ToDo

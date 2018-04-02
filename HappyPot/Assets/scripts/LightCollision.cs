@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LightCollision : MonoBehaviour {
-	//GameObject gameObject;
+	//private GameObject gameObject;
+	public float attractionCoef = 1.0f;
+	//private Gravity m_gravity;
+	private Transform transform;
+// Use this for initialization
+	void Start () {
+		transform = gameObject.GetComponent<Transform>();
+ }
+
+
 	// Use this for initialization
 	/*void Update () {
 		Debug.Log("test 2");
@@ -16,7 +25,8 @@ public class LightCollision : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other)
 	{
 		Debug.Log("inside");
-		//other.parent.GetComponent<PotState>.seeLight();
+		PotState tmp = other.GetComponentInParent<PotState>();
+		tmp.seeLight(transform.position,attractionCoef);
 	}
 	/*void OnTriggerExit2D(Collider2D other)
 	{
