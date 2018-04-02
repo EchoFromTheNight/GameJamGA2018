@@ -17,6 +17,12 @@ public class PotState : MonoBehaviour {
 	public float maxSpeed = 10.0f;
 	public float runSpeed = 5.0f;
 	public float jump = 1.0f;
+
+	public GameObject smallWalk;
+	public GameObject smallRun;
+	public GameObject smallIddle;
+
+	private GameObject currentAnnimations;
 	//growUpState
 		//small
 		//smallToBig
@@ -36,6 +42,17 @@ public class PotState : MonoBehaviour {
 		direction = 0;
 		transform = gameObject.GetComponent<Transform> ();
 		physic = gameObject.GetComponent<Rigidbody2D> ();
+
+		currentAnnimations = smallIddle;
+
+			smallRun.SetActive(false);
+			smallWalk.SetActive(false);
+
+		//get animations
+		//smallWalk = gameObject.Find("Petit_qui_Marche");//gameObject.GetComponent<GameObject>("Petit_qui_Marche");// as GameObject;
+		//smallRun = gameObject.GetComponent<Petit_qui_Marche>();
+		//smallIddle = gameObject.GetComponent<Petit_qui_Marche>();
+
 	}
 
 	// Update is called once per frame
@@ -69,6 +86,21 @@ public class PotState : MonoBehaviour {
 	}
 	private void setAnimations(){
 		Debug.Log("moveState : " + moveState);
+		GameObject tmp;
+		if (moveState == MoveState.iddle) {
+			tmp = smallIddle;
+		}
+		else if (moveState == MoveState.walk) {
+			tmp = smallWalk;
+		}
+		else /*if (moveState == MoveState.run) */{
+			tmp = smallRun;
+		}
+		if (currentAnnimations != tmp) {
+			currentAnnimations.SetActive(false);
+			currentAnnimations = tmp;
+			currentAnnimations.SetActive(true);
+		}
 	}
 
 	private void setMove(){
@@ -80,10 +112,12 @@ public class PotState : MonoBehaviour {
 		}else{
 			moveState = MoveState.walk;
 		}
+
 	}
 	private void setSound(){
 
 	}
+
 
 
 	void OnTriggerStay(Collider other)
