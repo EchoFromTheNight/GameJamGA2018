@@ -17,7 +17,7 @@ public class GameController : ExternalAction{
     {
         if (nbLights == 0)
         {
-            //SceneManager.LoadScene("Game_Over", LoadSceneMode.Single);
+            SceneManager.LoadScene("Game_Over", LoadSceneMode.Single);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
