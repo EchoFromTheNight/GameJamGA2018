@@ -15,6 +15,7 @@ public class PotState : MonoBehaviour {
 	private GrowUpState growUpState;
 	private int direction;//left -1, right 1, else 0
 	public float maxSpeed = 10.0f;
+	public float runSpeed = 5.0f;
 	public float jump = 1.0f;
 	//growUpState
 		//small
@@ -67,18 +68,18 @@ public class PotState : MonoBehaviour {
 			physic.AddForce(Vector2.left * attractionCoef * Mathf.Sign(tmpX));
 	}
 	private void setAnimations(){
-		//ToDo
+		Debug.Log("moveState : " + moveState);
 	}
 
 	private void setMove(){
 		//handle Move animation
-		/*if(physic.velocity.distance == 0 ){
+		if(physic.velocity.x == 0 ){
 			moveState = MoveState.iddle;
-		}else if(physic.velocity.value > runSpeed){
+		}else if(physic.velocity.x> runSpeed){
 			moveState = MoveState.run;
 		}else{
 			moveState = MoveState.walk;
-		}*/
+		}
 	}
 	private void setSound(){
 
