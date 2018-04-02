@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class AnimationEndController : MonoBehaviour {
 
+    //AudioClip
+    public AudioClip audioClip;
+
+    //Reference to the AudioSource
+    public AudioSource audioSource;
+
     public GameObject animation1;
 
     public GameObject animation2;
 
     // Use this for initialization
     void Start() {
+        audioSource.clip = audioClip;
         animation2.SetActive(false);
+        audioSource.Play();
         StartCoroutine("WaitAnimation1");
     }
 	
