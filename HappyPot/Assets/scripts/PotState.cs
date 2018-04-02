@@ -34,8 +34,19 @@ public class PotState : MonoBehaviour {
 		//private Gravity m_gravity;
 		private Transform transform;
 		private Rigidbody2D physic;
+
+		//AudioClip
+    public AudioClip audioClip;
+
+    //Reference to the AudioSource
+    private AudioSource audioSource;
+
+		private bool soundOn;
+
+
 	// Use this for initialization
 	void Start () {
+		soundOn = false;
 		moveState = MoveState.iddle;
 		humorState = HumorState.happy;
 		growUpState = GrowUpState.small;
@@ -53,6 +64,8 @@ public class PotState : MonoBehaviour {
 		//smallRun = gameObject.GetComponent<Petit_qui_Marche>();
 		//smallIddle = gameObject.GetComponent<Petit_qui_Marche>();
 
+		audioSource = gameObject.GetComponent<AudioSource>();
+		audioSource.clip = audioClip;
 	}
 
 	// Update is called once per frame
@@ -115,7 +128,16 @@ public class PotState : MonoBehaviour {
 
 	}
 	private void setSound(){
+		if(moveState == MoveState.walk){
+			if(!soundOn){
+				soundOn = true;
+				audioSource.Play();
+			}
 
+		}else{
+			audioSource.Stop();
+			soundOn = false;
+		}
 	}
 
 
